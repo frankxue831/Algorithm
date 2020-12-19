@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Algorithm.iml" filepath="$PROJECT_DIR$/.idea/Algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LinListPractice/LinListPractice.iml" filepath="$PROJECT_DIR$/LinListPractice/LinListPractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TreePractice/LinkList.iml" filepath="$PROJECT_DIR$/TreePractice/LinkList.iml" />
       <module fileurl="file://$PROJECT_DIR$/TreePractice/TreePractice.iml" filepath="$PROJECT_DIR$/TreePractice/TreePractice.iml" />
     </modules>
   </component>
