@@ -16,10 +16,10 @@ public class KnuthShuffle {
         int last = list1.size() - 1;
         for (int i = last; i >= 0; --i)
         {
-            // 从当0~当前索引位之间，选择一个数
+            //select a random index number to be swap
             int selection = r.nextInt(i + 1);
 
-            // 索引位对应的数据交换
+            // swap the position of two numbers
             int temp = list1.get(i);
             list1.set(i, list1.get(selection));
             list1.set(selection, temp);
