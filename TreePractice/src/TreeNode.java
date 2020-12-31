@@ -92,6 +92,23 @@ public class TreeNode {
         System.out.println(this);
     }
 
+    public void delNode(int val){
+        if(this.left != null && this.left.val == val){
+            this.left = null;
+            return;
+        }
+        if(this.right != null && this.right.val == val){
+            this.right = null;
+            return;
+        }
+        if(this.left != null){
+            this.left.delNode(val);
+        }
+        if(this.right != null){
+            this.right.delNode(val);
+        }
+    }
+
     public static void main(String[] args){
         TreeNode a1 = new TreeNode(1);
         TreeNode a2 = new TreeNode(2);
@@ -108,7 +125,9 @@ public class TreeNode {
         a1.postOrder();
         System.out.println("******");
         a1.infixOrder();
-        
+        System.out.println("******");
+        a1.delNode(4);
+        a1.preOrder();
     }
 }
 
