@@ -93,6 +93,7 @@ public class TreeNode {
     }
 
     public void delNode(int val){
+
         if(this.left != null && this.left.val == val){
             this.left = null;
             return;
