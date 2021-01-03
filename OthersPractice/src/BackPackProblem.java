@@ -49,8 +49,7 @@ public class BackPackProblem {
         }
         int[][] dp = new int[n+1][money+1];
         for(int i = 1; i<= n; i++){
-            int v, v1 =0, v2=0, v3=0;
-            int tempdp, tempdp1=0, tempdp2=0, tempdp3=0;
+            int v,v1=0,v2=0,v3=0,tempdp,tempdp1=0,tempdp2=0,tempdp3=0;
             v = list[i].v;
             tempdp = list[i].p * v;
             if(list[i].a1 != 0){
@@ -58,11 +57,11 @@ public class BackPackProblem {
                 tempdp1 = tempdp + list[list[i].a1].v*list[list[i].a1].p;
             }
             if(list[i].a2 != 0){
-                v1 = list[list[i].a2].v+v;
+                v2 = list[list[i].a2].v+v;
                 tempdp1 = tempdp + list[list[i].a2].v*list[list[i].a2].p;
             }
             if(list[i].a1 != 0 && list[i].a2 != 0){
-                v1 = list[list[i].a1].v+list[list[i].a2].v+v;
+                v3 = list[list[i].a1].v+list[list[i].a2].v+v;
                 tempdp3 = tempdp + list[list[i].a1].v*list[list[i].a1].p+
                         list[list[i].a2].v*list[list[i].a2].p;
             }
