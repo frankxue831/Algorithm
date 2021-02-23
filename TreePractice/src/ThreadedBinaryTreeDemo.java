@@ -17,6 +17,7 @@ public class ThreadedBinaryTreeDemo {
         ThreadedBinaryTree tree1 = new ThreadedBinaryTree(root);
         tree1.threadedNodes();
         System.out.println("****\n" + node4.getLeft().getNo());
+        tree1.threadedList();
     }
 }
 
@@ -40,6 +41,23 @@ class ThreadedBinaryTree {
         this.threadedNodes(root);
     }
 
+    public void threadedList(){
+        ThreadedHeroNode node = root;
+        while(node != null){
+            while(node.getLeftType() == 0){
+                node = node.getLeft();
+            }
+
+            System.out.println(node.toString());
+
+            while(node.getRightType() == 1){
+                node = node.getRight();
+                System.out.println(node.toString());
+            }
+
+            node = node.getRight();
+        }
+    }
     public void threadedNodes(ThreadedHeroNode node) {
         // can not threads node if it is null
         if (node == null) {
@@ -66,9 +84,28 @@ class ThreadedBinaryTree {
         threadedNodes(node.getRight());
     }
 
+    // it is a dead loop, since every node has a pointer.
     public void preOrder() {
         if (this.root != null) {
             this.root.preOrder();
+        } else {
+            System.out.println("Empty Tree, Can not go through");
+        }
+    }
+
+    // it is a dead loop, since every node has a pointer.
+    public void infixOrder() {
+        if (this.root != null) {
+            this.root.infixOrder();
+        } else {
+            System.out.println("Empty Tree, Can not go through");
+        }
+    }
+
+    // it is a dead loop, since every node has a pointer.
+    public void postOrder() {
+        if (this.root != null) {
+            this.root.postOrder();
         } else {
             System.out.println("Empty Tree, Can not go through");
         }
@@ -162,6 +199,13 @@ class ThreadedHeroNode{
         this.rightType = rightType;
     }
 
+    @Override
+    public String toString() {
+        return "ThreadedHeroNode{" +
+                "no=" + no +
+                ", name='" + name + '\'' +
+                '}';
+    }
 
     public void preOrder() {
         System.out.println(this);
@@ -172,6 +216,31 @@ class ThreadedHeroNode{
         if(this.right != null){
             this.right.preOrder();
         }
+    }
+
+    public void infixOrder() {
+
+        if(this.left != null){
+            this.left.preOrder();
+        }
+
+        System.out.println(this);
+
+        if(this.right != null){
+            this.right.preOrder();
+        }
+    }
+
+    public void postOrder() {
+
+        if(this.left != null){
+            this.left.preOrder();
+        }
+        if(this.right != null){
+            this.right.preOrder();
+        }
+
+        System.out.println(this);
     }
 
     public int getVal() {
