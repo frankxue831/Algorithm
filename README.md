@@ -9,5 +9,6 @@
 * binary tree
 * threaded binary tree
 * heap sort -- build max heap
+* Huffman coding
 
 ### 3. sort algorithms
