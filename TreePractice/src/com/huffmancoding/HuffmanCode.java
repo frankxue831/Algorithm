@@ -27,7 +27,24 @@ public class HuffmanCode {
         System.out.println("PreOrder form:");
         HuffmanCode.preOrder(huffmanTreeRoot);
 
+        getCodes(huffmanTreeRoot, "", sb);
+        System.out.println("codes:"+ huffmanCodes);
+        Map<Byte, String> huffmanCodes = getCodes(huffmanTreeRoot);
+        System.out.println("Bytes + Codes : " + huffmanCodes);
+
     }
+
+    private static Map<Byte, String> getCodes(Node root){
+        if(root == null){
+            return null;
+        }
+
+        getCodes(root.left, "0", sb);
+        getCodes(root.right, "1", sb);
+        return huffmanCodes;
+
+    }
+
 
     // generate the Huffman code by Huffman tree, every left path mark as 0, right as 1
 
@@ -41,6 +58,19 @@ public class HuffmanCode {
      *                      ->010
      */
     private static void getCodes(Node node, String code, StringBuilder stringBuilder){
+        StringBuilder str = new StringBuilder(stringBuilder);
+        // compose the code by path
+        str.append(code);
+        if(node != null){
+            if(node.data == null){ //it is not a leaf node, continue
+                // left traverse
+                getCodes(node.left, "0", str);
+                // right traverse
+                getCodes(node.right, "1", str);
+            } else{ // it reach the leaf nodes
+                huffmanCodes.put(node.data, str.toString());
+            }
+        }
 
     }
 
@@ -108,6 +138,9 @@ public class HuffmanCode {
     }
 }
 
+/**
+ * class for creating the node of the huffman tree
+ */
 class Node implements Comparable<Node> {
     Byte data;
     int weight;
