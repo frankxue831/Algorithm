@@ -32,8 +32,59 @@ public class HuffmanCode {
         Map<Byte, String> huffmanCodes = getCodes(huffmanTreeRoot);
         System.out.println("Bytes + Codes : " + huffmanCodes);
 
+        byte[] huffmanCodeBytes = zip(contentBytes, huffmanCodes);
+        System.out.println("huffmanCodesBytes: " + Arrays.toString(huffmanCodeBytes));
+
+
     }
 
+    public static byte[] zip(byte[] bytes, Map<Byte, String> huffmanCodes){
+        // first, turn bytes into assigned huffman codes
+        StringBuilder stringBuilder = new StringBuilder();
+        //traverse byte[] bytes;
+        for(byte b: bytes){
+            stringBuilder.append(huffmanCodes.get(b));
+        }
+
+        System.out.println("Testing stringBuilder= " + stringBuilder.toString());
+
+        // count the length of the HuffmanCode(Byte)
+
+        /*
+          int len;
+          if(stringBuilder.length() % 8 == 0){
+          len = stringBuilder.length() / 8;
+          } else{
+          len = stringBuilder.length() / 8 + 1;
+          }
+         */
+        int len = (stringBuilder.length() + 7 ) / 8;
+
+        // create the byte array for storing the zipped info
+        byte[] huffmanCodeBytes = new byte[len];
+        int index = 0;
+        for(int i = 0; i < stringBuilder.length(); i += 8){
+            String strByte;
+            if(i + 8 > stringBuilder.length()){
+                strByte = stringBuilder.substring(i);
+            }else {
+                strByte = stringBuilder.substring(i, i + 8);
+            }
+            //turn strByte to a byte and put it in huffmanCodeBytes
+            huffmanCodeBytes[index] = (byte)Integer.parseInt(strByte,2);
+            index++;
+        }
+        return huffmanCodeBytes;
+
+
+
+    }
+
+    /**
+     * override the getCodes for passing the root to the method
+     * @param root the root of the Huffman-Tree root
+     * @return the huffman codes of each giving character as type <Byte, String>.
+     */
     private static Map<Byte, String> getCodes(Node root){
         if(root == null){
             return null;
