@@ -3,8 +3,8 @@
  * 1. reverse the list
  *
  */
-public class Practice {
-    public ListNode reverseList(ListNode head){
+public class ReverseList {
+    public static ListNode reverseList(ListNode head){
         ListNode curr = head;
         ListNode reverse = null;
         if(head == null || head.next == null){

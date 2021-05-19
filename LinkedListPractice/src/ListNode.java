@@ -20,10 +20,15 @@ public class ListNode {
 
     @Override
     public String toString() {
-        return "ListNode{" +
+        return "ListNode:" +
                 "val=" + val +
-                ", next=" + next +
-                '}';
+                "--->" + next;
+    }
+
+    public String toString(String s) {
+        return "ListNode:" +
+                "val=" + val +
+                "--->" + next;
     }
 
     public boolean hasCycle(ListNode head) {

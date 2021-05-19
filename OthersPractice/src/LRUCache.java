@@ -20,7 +20,17 @@ public class LRUCache extends LinkedHashMap<Integer, Integer> {
     public boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest){
         return size() > capacity;
     }
+
+
     public static void main(String[] args){
+        LRUCache cache1 = new LRUCache(3);
+        cache1.put(1,1);
+        cache1.put(2,1);
+        cache1.put(3,10);
+        System.out.println(cache1.toString());
+        cache1.put(4,20);
+        System.out.println(cache1.toString());
+
 
     }
 }

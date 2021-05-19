@@ -56,7 +56,6 @@ public class HeapSort {
             if(k+1 < length && arr[k] < arr[k+1]){ //check if left node is smaller than right
                 k++; // set pointer to the right node
             }
-
             if(arr[k] > temp){ // check if child is larger than parent
                 arr[i] = arr[k];
                 i = k; // set i to k, continue the loop

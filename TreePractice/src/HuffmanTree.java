@@ -49,12 +49,8 @@ public class HuffmanTree {
             nodes.remove(right);
             nodes.add(parent);
         }
-
         // root
         return nodes.get(0);
-
-
-
     }
 }
 
