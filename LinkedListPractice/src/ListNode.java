@@ -1,3 +1,5 @@
+import org.w3c.dom.NodeList;
+
 public class ListNode {
     public int val;
     public ListNode next;
@@ -7,6 +9,10 @@ public class ListNode {
         next = null;
     }
 
+    public ListNode(int num, ListNode node){
+        val = num;
+        next = node;
+    }
 
     public int getVal() {
         return val;
@@ -31,6 +37,12 @@ public class ListNode {
                 "--->" + next;
     }
 
+    public void addAtHead(int val) throws CloneNotSupportedException {
+        ListNode before = (ListNode) this.clone();
+        ListNode temp = new ListNode(val, before);
+        this.next = temp;
+    }
+
     public boolean hasCycle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
@@ -48,10 +60,13 @@ public class ListNode {
 
     }
 
-    public static void main(String[]  args){
+    public static void main(String[]  args) throws CloneNotSupportedException {
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
+
+
         b.next = a;
+        b.addAtHead(3);
         System.out.println(b.toString());
     }
 }

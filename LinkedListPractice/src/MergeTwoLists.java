@@ -1,4 +1,3 @@
-import com.sun.xml.internal.bind.v2.TODO;
 
 public class MergeTwoLists {
     public static void main(String[] args){

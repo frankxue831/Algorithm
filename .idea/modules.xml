@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/LinkedListPractice/LinkedListPractice.iml" filepath="$PROJECT_DIR$/LinkedListPractice/LinkedListPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/OthersPractice/OthersPractice.iml" filepath="$PROJECT_DIR$/OthersPractice/OthersPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/TreePractice/TreePractice.iml" filepath="$PROJECT_DIR$/TreePractice/TreePractice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-structure/data-structure.iml" filepath="$PROJECT_DIR$/data-structure/data-structure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sortAlgorithm/sortAlgorithm.iml" filepath="$PROJECT_DIR$/sortAlgorithm/sortAlgorithm.iml" />
     </modules>
   </component>
 </project>

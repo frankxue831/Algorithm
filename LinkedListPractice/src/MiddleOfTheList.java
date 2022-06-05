@@ -9,12 +9,14 @@ public class MiddleOfTheList {
         ListNode a1 = new ListNode(4);
         ListNode a2 = new ListNode(6);
         ListNode a3 = new ListNode(2);
+        ListNode a4 = new ListNode(7);
         a.next = a1;
         a1.next = a2;
         a2.next = a3;
+        a3.next = a4;
         ListNode res = findMiddle2(a);
         System.out.println(res.toString());
-
+        System.out.println(a.toString());
     }
 
     public static ListNode findMiddle1(ListNode head){
